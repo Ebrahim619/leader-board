@@ -7,13 +7,14 @@ body{
 }
 main{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .container{
     background-color: #ffffff;
     width: 870px;
     border-radius: 5px;
-    padding: 30px;
+    padding: 30px;margin-top: 21px;
 }
 hr{
     border: 1px solid #d1d1d1;
@@ -74,4 +75,87 @@ top blog atyle
     text-decoration: none;
     font-size: 16px;
     color: #562eff;
+}
+/* ---------------------
+courses style
+----------------------- */
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 23px;
+}
+.course{
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    box-shadow: 3px 4px 10px -5px rgba(0,0,0,0.73);
+
+}
+.course .course-banner img{
+    width: 250px;
+    height: auto;
+}
+.course-detail{
+    padding-left:10px ;
+} 
+.course-detail .course-title{
+    font-size: 21px;
+}
+.course-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 10px 10px;
+}
+.fa-star{
+    font-size: 12px;
+}
+.fa-star.filled{
+    color: #FFC014;
+}
+.fa-star.empty{
+    color:  #AEAEAE;
+}
+/*-------------------
+ media queries
+ -------------------- */
+
+
+ /* mobile devices  */
+@media only screen and (max-width:650px) {
+    .container{
+        width: 100%;
+    }
+    .players{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .player, .blog{
+        flex-direction: column;
+    }
+    .blogs, .courses{
+        grid-template-columns: repeat(1,1fr);
+    }
+  
+}
+/* tablet devices */
+@media only screen and (min-width:651px) and (max-width:992px) {
+    .container{
+        width: 100%;
+        margin-left: 20px;
+    }
+    .players{
+        grid-template-columns: repeat(2,1fr);
+        margin-left: 25px;
+    }
+    .blogs{
+        margin-left: 20px;
+    }
+    .courses{
+        grid-template-columns: repeat(2,1fr);
+        margin-left: 25px;
+        grid-row-gap: 26px;
+    }
+    .course .course-banner img{
+        width: 350px;
+        height: auto;
+    }
 }
